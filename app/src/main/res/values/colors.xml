@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimaryDark">#004646</color>
+    <color name="colorPrimary">#008080</color>
+    <color name="colorAccent">#800000</color>
+
+    <!--基础颜色-->
+    <color name="white">#ffffff</color>
+    <color name="color_loc_bac">#6e030303</color>
+    <color name="lighter_gray">#a4a4a4</color>
+
+    <!--字体颜色-->
+    <color name="text_light_gray">#dadada</color>
+    <color name="text_regular">#2e2e2e</color>
+
+</resources>
