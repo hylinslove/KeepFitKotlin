@@ -42,7 +42,6 @@ class ChartFragment : Fragment() {
         contentView = inflater?.inflate(R.layout.fragment_chart,null)!!
         type = arguments.getString("type")
 
-
         return contentView
 
     }

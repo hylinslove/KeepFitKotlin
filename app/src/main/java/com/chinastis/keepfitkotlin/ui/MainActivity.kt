@@ -5,13 +5,16 @@ import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
+import android.util.Log
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.adapter.ChartPagerAdapter
 import com.chinastis.keepfitkotlin.ui.fragment.ChartFragment
 import java.util.ArrayList
+import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
+    private lateinit var titles:Array<String>
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager
     private lateinit var fragments: ArrayList<Fragment>
@@ -19,6 +22,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        titles = arrayOf("日","周","月","年")
 
         initTabLayout()
         initFragment()
@@ -27,41 +31,31 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun initViewPager() {
-        viewPager = findViewById(R.id.view_pager_main) as ViewPager
 
-        val titles = arrayOf("日","周","月","年")
         val adapter = ChartPagerAdapter(supportFragmentManager,fragments)
         adapter.setTitles(titles)
 
+        viewPager = findViewById(R.id.view_pager_main) as ViewPager
         viewPager.offscreenPageLimit = titles.size - 1
         viewPager.adapter = adapter
 
         tabLayout.setupWithViewPager(viewPager)
+
     }
 
     private fun initFragment() {
 
         fragments = ArrayList()
-        val dayChartFragment = ChartFragment.getChartFragment("日")
-        val weekChartFragment = ChartFragment.getChartFragment("周")
-        val monthChartFragment = ChartFragment.getChartFragment("月")
-        val yearChartFragment = ChartFragment.getChartFragment("年")
 
-        fragments.add(dayChartFragment)
-        fragments.add(weekChartFragment)
-        fragments.add(monthChartFragment)
-        fragments.add(yearChartFragment)
+        titles.map { ChartFragment.getChartFragment(it) }
+                .forEach { fragments.add(it) }
 
     }
 
     private fun initTabLayout() {
-
         tabLayout = findViewById(R.id.tab_main) as TabLayout
-        tabLayout.addTab(tabLayout.newTab().setText("日"))
-        tabLayout.addTab(tabLayout.newTab().setText("周"))
-        tabLayout.addTab(tabLayout.newTab().setText("月"))
-        tabLayout.addTab(tabLayout.newTab().setText("年"))
 
+        titles.forEach { title -> tabLayout.addTab(tabLayout.newTab().setText(title)) }
 
     }
 }
