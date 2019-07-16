@@ -48,7 +48,13 @@ open class BaseActivity : AppCompatActivity() {
     private fun initToolBar() {
         titleText = findViewById(R.id.title_base) as TextView?
         title = fromIntent?.getStringExtra(Constant.TITLE)
-        titleText?.text = title
+        titleText?.text = if (title==null) "KEEP FIT" else title
+
+        findViewById(R.id.navigation_icon_base).setOnClickListener {
+            this.finish()
+        }
+
+
     }
 
 

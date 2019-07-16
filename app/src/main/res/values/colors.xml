@@ -6,6 +6,7 @@
 
     <!--基础颜色-->
     <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
     <color name="color_loc_bac">#6e030303</color>
     <color name="lighter_gray">#a4a4a4</color>
 

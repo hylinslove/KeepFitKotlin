@@ -33,8 +33,19 @@
             <TextView
                 android:text="公斤"
                 android:layout_margin="5dp"
+                android:id="@+id/unit_day"
                 android:layout_centerVertical="true"
                 android:layout_toRightOf="@+id/weight_day"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content" />
+
+            <ImageView
+                android:id="@+id/input_day"
+                android:clickable="true"
+                android:src="@drawable/icon_write"
+                android:layout_marginLeft="10dp"
+                android:layout_toRightOf="@+id/unit_day"
+                android:layout_centerVertical="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
         </RelativeLayout>
