@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="7dp">
+
+
+    <TextView
+        android:text="选择您的身高（单位：厘米）"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textSize="18sp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <NumberPicker
+        android:id="@+id/picker_num"
+        android:layout_margin="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    </NumberPicker>
+
+    <LinearLayout
+        android:padding="7dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <Button
+            android:text="取消"
+            android:layout_margin="5dp"
+            android:textColor="@color/white"
+            android:id="@+id/cancel_num"
+            android:background="@drawable/bac_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="35dp" />
+
+        <Button
+            android:text="确定"
+            android:textColor="@color/white"
+            android:id="@+id/confirm_num"
+            android:background="@drawable/bac_button"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_margin="5dp"
+            android:layout_height="35dp" />
+
+    </LinearLayout>
+
+</LinearLayout>

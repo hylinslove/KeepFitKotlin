@@ -4,13 +4,13 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.chinastis.keepfitkotlin.ui.InputActivity">
+    tools:context="com.chinastis.keepfitkotlin.ui.SettingActivity">
 
     <com.chinastis.keepfitkotlin.widget.NumberSelector
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         android:layout_centerInParent="true"
-        android:id="@+id/number_selector_input"
+        android:id="@+id/number_selector_setting"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -28,7 +28,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="日期:"
+                android:text="身高:"
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:layout_weight="2"
@@ -37,8 +37,8 @@
                 android:layout_height="60dp" />
 
             <TextView
-                android:id="@+id/date_input"
-                android:text="2016年4月16日"
+                android:id="@+id/height_setting"
+                android:text="170 cm"
                 android:drawableRight="@drawable/icon_more"
                 android:gravity="center"
                 android:textSize="14sp"
@@ -56,7 +56,7 @@
             android:layout_height="wrap_content">
 
             <TextView
-                android:text="体重:"
+                android:text="目标体重:"
                 android:textSize="16sp"
                 android:textColor="@color/white"
                 android:layout_weight="2"
@@ -78,7 +78,7 @@
 
         <TextView
             android:textColor="@color/text_light_gray"
-            android:id="@+id/number_input"
+            android:id="@+id/goal_setting"
             android:textSize="42sp"
             android:layout_margin="10dp"
             android:layout_gravity="center_horizontal"
@@ -89,7 +89,7 @@
 
 
     <Button
-        android:id="@+id/confirm_input"
+        android:id="@+id/confirm_setting"
         android:background="@drawable/bac_button"
         android:textColor="@color/text_light_gray"
         android:layout_alignParentBottom="true"
@@ -99,7 +99,5 @@
         android:layout_marginBottom="80dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
-
-
 
 </RelativeLayout>

@@ -1,19 +1,25 @@
 package com.chinastis.keepfitkotlin.ui
 
+import android.content.Context
+import android.content.Intent
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.design.widget.TabLayout
 import android.support.v4.app.Fragment
 import android.support.v4.view.ViewPager
 import android.util.Log
+import android.widget.ImageView
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.adapter.ChartPagerAdapter
-import com.chinastis.keepfitkotlin.ui.fragment.ChartFragment
+import com.chinastis.keepfitkotlin.base.Constant
+import com.chinastis.keepfitkotlin.db.DbManager
+import com.chinastis.keepfitkotlin.ui.fragment.DayFragment
+import com.chinastis.keepfitkotlin.ui.fragment.WeekFragment
 import java.util.ArrayList
-import kotlin.math.log
 
 class MainActivity : AppCompatActivity() {
 
+    private val context: Context = this
     private lateinit var titles:Array<String>
     private lateinit var tabLayout: TabLayout
     private lateinit var viewPager: ViewPager
@@ -24,10 +30,23 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
         titles = arrayOf("日","周","月","年")
 
+        initSetting()
         initTabLayout()
         initFragment()
         initViewPager()
 
+        val dbManager = DbManager.getInstance(this)
+
+
+    }
+
+    private fun initSetting() {
+        val setting: ImageView  = findViewById(R.id.setting_main) as ImageView
+        setting.setOnClickListener({
+            val intent = Intent(context,SettingActivity().javaClass)
+            intent.putExtra(Constant.TITLE,"设置")
+            startActivity(intent)
+        })
     }
 
     private fun initViewPager() {
@@ -47,8 +66,28 @@ class MainActivity : AppCompatActivity() {
 
         fragments = ArrayList()
 
-        titles.map { ChartFragment.getChartFragment(it) }
-                .forEach { fragments.add(it) }
+        for (i in titles.indices) {
+
+            when (titles[i]) {
+                "日" -> {
+                    val dayFragment: Fragment = DayFragment.getChartFragment(titles[i])
+                    fragments.add(dayFragment)
+                }
+                "周" -> {
+                    val weekFragment: Fragment = WeekFragment.getChartFragment(titles[i])
+                    fragments.add(weekFragment)
+                }
+                "月" -> {
+                    val monthFragment: Fragment = WeekFragment.getChartFragment(titles[i])
+                    fragments.add(monthFragment)
+                }
+                "年" -> {
+                    val yearFragment: Fragment = WeekFragment.getChartFragment(titles[i])
+                    fragments.add(yearFragment)
+                }
+            }
+        }
+
 
     }
 

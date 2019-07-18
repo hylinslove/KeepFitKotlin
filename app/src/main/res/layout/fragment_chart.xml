@@ -11,7 +11,7 @@
 
         <TextView
             android:text="2016年4月16日"
-            android:layout_margin="10dp"
+            android:layout_margin="20dp"
             android:gravity="center"
             android:textColor="@color/text_main"
             android:id="@+id/date_day"
@@ -19,13 +19,14 @@
             android:layout_height="wrap_content" />
 
         <RelativeLayout
+            android:layout_margin="20dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
             <TextView
                 android:id="@+id/weight_day"
                 android:textColor="@color/white"
                 android:text="--"
-                android:textSize="46sp"
+                android:textSize="50sp"
                 android:layout_centerInParent="true"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -42,6 +43,7 @@
             <ImageView
                 android:id="@+id/input_day"
                 android:clickable="true"
+                android:padding="10dp"
                 android:src="@drawable/icon_write"
                 android:layout_marginLeft="10dp"
                 android:layout_toRightOf="@+id/unit_day"
@@ -51,7 +53,7 @@
         </RelativeLayout>
 
         <TextView
-            android:text="BMI 20.0 | 标准"
+            android:text="BMI 未知 | 未知"
             android:layout_margin="10dp"
             android:gravity="center"
             android:textColor="@color/text_main"
@@ -60,15 +62,17 @@
             android:layout_height="wrap_content" />
 
         <ProgressBar
+            android:layout_marginTop="10dp"
+            android:id="@+id/progress_day"
             android:layout_marginRight="20dp"
             android:layout_marginLeft="20dp"
-            android:progress="60"
+            android:progress="0"
             style="@style/Base.Widget.AppCompat.ProgressBar.Horizontal"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
         <TextView
-            android:text="还需增重5公斤"
+            android:text="未设置目标体重"
             android:layout_margin="10dp"
             android:gravity="center"
             android:textColor="@color/text_main"
