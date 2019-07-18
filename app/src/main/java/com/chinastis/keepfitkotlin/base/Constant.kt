@@ -5,4 +5,5 @@ package com.chinastis.keepfitkotlin.base
  */
 object Constant {
     const val TITLE = "title"
+    var GOAL_WEIGHT: String? = "0"
 }

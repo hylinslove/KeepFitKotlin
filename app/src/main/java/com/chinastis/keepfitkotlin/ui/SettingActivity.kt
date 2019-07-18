@@ -8,6 +8,7 @@ import android.widget.Toast
 
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.base.BaseActivity
+import com.chinastis.keepfitkotlin.base.Constant
 import com.chinastis.keepfitkotlin.db.DbManager
 import com.chinastis.keepfitkotlin.widget.NumberPickerDialog
 import com.chinastis.keepfitkotlin.widget.NumberSelector
@@ -71,6 +72,8 @@ class SettingActivity : BaseActivity() {
                 cv.put("height",heightNum.toString())
                 dbManager.inert("user",cv)
             }
+
+            Constant.GOAL_WEIGHT = numberText.text.toString()
 
             Toast.makeText(this,"输入成功！", Toast.LENGTH_SHORT).show()
             this.finish()

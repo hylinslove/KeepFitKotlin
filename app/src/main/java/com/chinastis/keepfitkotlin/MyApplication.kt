@@ -3,6 +3,7 @@ package com.chinastis.keepfitkotlin
 import android.app.Application
 import android.content.ContentValues
 import android.content.Context
+import com.chinastis.keepfitkotlin.base.Constant
 
 import com.chinastis.keepfitkotlin.db.DbManager
 
@@ -21,6 +22,8 @@ class MyApplication : Application() {
             cv.put("user_id", "0000")
             cv.put("user_name", "default_user")
             dbManager.inert("user", cv)
+        } else {
+            Constant.GOAL_WEIGHT = list[0]["goal_weight"]
         }
     }
 

@@ -89,6 +89,7 @@ class InputActivity : BaseActivity() {
             cv.put("weight",numberText.text.toString())
             cv.put("date_string",dateString)
             cv.put("date_time",DateUtil.getDateTime(dateString))
+            Log.e("MENG","time millis:"+DateUtil.getDateTime(dateString))
 
             val list = dbManager.select("select * from weight where date_string = '$dateString'")
 
