@@ -9,7 +9,7 @@
 
 
     <TextView
-        android:text="KEEP FIT"
+        android:text="@string/app_name"
         android:textSize="32sp"
         android:layout_centerInParent="true"
         android:textColor="@color/text_light_gray"

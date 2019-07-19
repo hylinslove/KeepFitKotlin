@@ -89,13 +89,15 @@ class InputActivity : BaseActivity() {
             cv.put("weight",numberText.text.toString())
             cv.put("date_string",dateString)
             cv.put("date_time",DateUtil.getDateTime(dateString))
-            Log.e("MENG","time millis:"+DateUtil.getDateTime(dateString))
+            Log.e("MENG","time millis:"+dateString)
 
             val list = dbManager.select("select * from weight where date_string = '$dateString'")
 
             if (list.size > 0) {
+
                 dbManager.update("weight",cv,"date_string = ?" , arrayOf(dateString))
             } else {
+
                 dbManager.inert("weight",cv)
             }
 
@@ -111,6 +113,10 @@ class InputActivity : BaseActivity() {
             Log.e("MENG","dayOfMonth:"+dayOfMonth)
 
             val stringBuilder = StringBuilder()
+
+            if (month<10) {
+
+            }
 
             dateText.text =  stringBuilder.append(year).append("年")
                     .append(month+1).append("月")

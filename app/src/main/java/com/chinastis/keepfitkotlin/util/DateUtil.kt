@@ -15,9 +15,13 @@ object DateUtil {
      * 获取中文时间
      */
     fun getDateString(date: Date): String {
+        val calendar = Calendar.getInstance()
+        val year = calendar.get(Calendar.YEAR)
+        var month = calendar.get(Calendar.MONTH)
+        val day = calendar.get(Calendar.DAY_OF_MONTH)
 
-        val format = SimpleDateFormat("yyyy年MM月dd日")
-        return format.format(date)
+//        val format = SimpleDateFormat("yyyy年MM月dd日")
+        return "${year}年${++month}月${day}日"
     }
 
     /**
