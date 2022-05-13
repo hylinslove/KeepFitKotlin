@@ -1,11 +1,12 @@
 package com.chinastis.keepfitkotlin.base
 
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
+
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.widget.*
+import androidx.appcompat.app.AppCompatActivity
 
 import com.chinastis.keepfitkotlin.R
 
@@ -50,7 +51,7 @@ open class BaseActivity : AppCompatActivity() {
         title = fromIntent?.getStringExtra(Constant.TITLE)
         titleText?.text = if (title==null) "KEEP FIT" else title
 
-        findViewById(R.id.navigation_icon_base).setOnClickListener {
+        findViewById<ImageView>(R.id.navigation_icon_base).setOnClickListener {
             this.finish()
         }
 

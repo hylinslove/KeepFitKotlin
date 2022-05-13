@@ -5,11 +5,11 @@ import android.content.ContentValues
 import android.graphics.Paint
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 import android.util.Log
 import android.widget.Button
 import android.widget.TextView
 import android.widget.Toast
+import androidx.annotation.RequiresApi
 
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.base.BaseActivity

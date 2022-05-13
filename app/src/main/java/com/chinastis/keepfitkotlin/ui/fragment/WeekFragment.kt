@@ -3,11 +3,11 @@ package com.chinastis.keepfitkotlin.ui.fragment
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.base.Constant
 import com.chinastis.keepfitkotlin.db.DbManager
@@ -37,7 +37,7 @@ class WeekFragment : Fragment() {
 
     private lateinit var lineChart: LineChart
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         this.actContext = context!!
         dbManager = DbManager.getInstance(context)
@@ -57,9 +57,9 @@ class WeekFragment : Fragment() {
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         contentView = inflater?.inflate(R.layout.fragment_week, null)!!
-        type = arguments.getString("type")
+        type = arguments?.getString("type")!!
 
         initLineChart()
 
@@ -108,7 +108,7 @@ class WeekFragment : Fragment() {
         //初始化折线数据集合
         val dataSet = LineDataSet(entryList,"my weight")
         //line color
-        dataSet.color = context.resources.getColor(R.color.colorAccent)
+        dataSet.color = context?.resources?.getColor(R.color.colorAccent)!!
         //line width
         dataSet.lineWidth = 4f
         //show dot

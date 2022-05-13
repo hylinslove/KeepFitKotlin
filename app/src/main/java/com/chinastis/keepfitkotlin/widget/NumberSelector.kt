@@ -7,9 +7,6 @@ import android.graphics.Canvas
 import android.graphics.Color
 import android.graphics.Paint
 import android.os.Build
-import android.support.annotation.RequiresApi
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
 import android.util.AttributeSet
 import android.util.SparseArray
 import android.view.LayoutInflater
@@ -18,6 +15,9 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.LinearLayout
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 import com.chinastis.keepfitkotlin.R
 
@@ -147,7 +147,7 @@ class NumberSelector : LinearLayout {
         numberRV!!.adapter = NumberSelectorAdapter(numberList, context, NUMBER_TYPE)
 
         degreeRV!!.setOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (recyclerView!!.scrollState != RecyclerView.SCROLL_STATE_IDLE) {
                     numberRV!!.scrollBy(dx, dy)
@@ -157,7 +157,7 @@ class NumberSelector : LinearLayout {
         })
 
         numberRV!!.setOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
                 if (recyclerView!!.scrollState != RecyclerView.SCROLL_STATE_IDLE) {
                     degreeRV!!.scrollBy(dx, dy)

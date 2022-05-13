@@ -17,7 +17,7 @@
     </com.chinastis.keepfitkotlin.widget.NumberSelector>
 
     <LinearLayout
-        android:layout_above="@+id/number_selector_input"
+        android:layout_above="@id/number_selector_setting"
         android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="match_parent">

@@ -2,19 +2,18 @@ package com.chinastis.keepfitkotlin.ui
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import android.support.design.widget.TabLayout
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
-import android.util.Log
 import android.widget.ImageView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.adapter.ChartPagerAdapter
 import com.chinastis.keepfitkotlin.base.Constant
 import com.chinastis.keepfitkotlin.db.DbManager
 import com.chinastis.keepfitkotlin.ui.fragment.DayFragment
 import com.chinastis.keepfitkotlin.ui.fragment.WeekFragment
+import com.google.android.material.tabs.TabLayout
 import java.util.ArrayList
 
 class MainActivity : AppCompatActivity() {

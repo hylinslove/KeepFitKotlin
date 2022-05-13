@@ -3,8 +3,6 @@ package com.chinastis.keepfitkotlin.widget
 import android.app.Dialog
 import android.content.Context
 import android.os.Bundle
-import android.support.annotation.StyleRes
-import android.view.View
 import android.widget.Button
 import android.widget.NumberPicker
 

@@ -4,9 +4,7 @@ import android.content.Context
 import android.content.Intent
 import android.os.Build
 import android.os.Bundle
-import android.support.annotation.RequiresApi
 
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -14,6 +12,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.ProgressBar
 import android.widget.TextView
+import androidx.annotation.RequiresApi
+import androidx.fragment.app.Fragment
 import com.chinastis.keepfitkotlin.R
 import com.chinastis.keepfitkotlin.db.DbManager
 import com.chinastis.keepfitkotlin.ui.InputActivity
@@ -39,7 +39,7 @@ class DayFragment : Fragment() {
     private lateinit var bmiText: TextView
     private lateinit var progress: ProgressBar
 
-    override fun onAttach(context: Context?) {
+    override fun onAttach(context: Context) {
         super.onAttach(context)
         this.actContext = context!!
         dbManager = DbManager.getInstance(context)
@@ -60,9 +60,9 @@ class DayFragment : Fragment() {
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
-    override fun onCreateView(inflater: LayoutInflater?, container: ViewGroup?, savedInstanceState: Bundle?): View? {
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         contentView = inflater?.inflate(R.layout.fragment_chart, null)!!
-        type = arguments.getString("type")
+        type = arguments?.getString("type")!!
 
         when (type) {
             "日" -> {
@@ -155,7 +155,7 @@ class DayFragment : Fragment() {
 
         val input: ImageView = contentView.findViewById(R.id.input_day) as ImageView
         input.setOnClickListener {
-            context.startActivity(Intent(context, InputActivity().javaClass))
+            context?.startActivity(Intent(context, InputActivity().javaClass))
         }
     }
 
